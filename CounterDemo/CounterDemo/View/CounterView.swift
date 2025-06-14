@@ -8,23 +8,17 @@
 import SwiftUI
 
 struct CounterView: View {
-    /*
-     @State attribute 는 local state 를 관리한다는 뜽시기 때문에 다른 화면에 상태를 전파할 수 없음.
-     
-     Local, non-persisted state
-     */
-    @State var count: Int = 0
-    
-    
+    @ObservedObject var state: AppState
     
     var body: some View {
         VStack {
             HStack {
-                Button(action: { self.count -= 1 }) {
+                Button(action: { self.state.count -= 1 }) {
                     Text("-")
                 }
-                Text("\(count)")
-                Button(action: { self.count += 1 }) {
+                Text("\(state.count)")
+                    
+                Button(action: { self.state.count += 1 }) {
                     Text("+")
                 }
             }
@@ -32,7 +26,7 @@ struct CounterView: View {
                 Text("Is this prime?")
             }
             Button(action: {}) {
-                Text("What's the \(ordinal(self.count)) prime?")
+                Text("What's the \(ordinal(self.state.count)) prime?")
             }
         }
         .font(.title)
@@ -47,6 +41,6 @@ struct CounterView: View {
 }
 
 #Preview {
-    CounterView()
+    CounterView(state: .init())
 }
 
