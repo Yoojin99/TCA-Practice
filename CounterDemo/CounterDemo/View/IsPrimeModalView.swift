@@ -12,9 +12,26 @@ struct IsPrimeModalView: View {
     
     var body: some View {
         VStack {
-            Text("I don't know if \(self.state.count) is prime")
-            Button(action: {}) {
-                Text("Save/remove to/from favorite primes")
+            if isPrime(self.state.count) {
+                Text("\(self.state.count) is prime 🎉")
+                
+                if self.state.favoritePrimes.contains(self.state.count) {
+                    Button(action: {
+                        self.state.favoritePrimes.removeAll(where: {
+                            $0 == self.state.count
+                        })
+                    }) {
+                        Text("Remove from favorite primes")
+                    }
+                } else {
+                    Button(action: {
+                        self.state.favoritePrimes.append(self.state.count)
+                    }) {
+                        Text("Save to favorite primes")
+                    }
+                }
+            } else {
+                Text("\(self.state.count) is not prime :(")
             }
         }
     }
