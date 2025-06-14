@@ -1,0 +1,71 @@
+# Swift / Xcode
+
+# Build
+build/
+DerivedData/
+*.xcworkspace
+!default.xcworkspace
+
+# Swift Package Manager
+.swiftpm/
+.build/
+Packages/
+Package.resolved
+Package.pins
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/
+Carthage/Build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output/
+
+# Xcode
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/xcshareddata/WorkspaceSettings.xcsettings
+*.xcuserdata/
+*.xcuserstate
+*.moved-aside
+*.xcscmblueprint
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# User-specific files
+*.DS_Store
+*.plist
+*.orig
+*.mode1v3
+*.pbxuser
+*.xcuserdatad/
+
+# Archive
+*.xcarchive
+
+# Symbolicated crash logs
+*.dSYM.zip
+*.dSYM
+
+# Playground
+timeline.xctimeline
+playground.xcworkspace
+
+# SwiftUI Previews
+.swiftpm/xcode/package.pins
+
+# Misc
+*.log
+*.tmp
+*.xcuserstate
+CounterDemo/CounterDemo.xcodeproj/project.xcworkspace/xcuserdata/jean.333.xcuserdatad/UserInterfaceState.xcuserstate
